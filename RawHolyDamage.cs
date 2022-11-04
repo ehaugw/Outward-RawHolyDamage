@@ -19,7 +19,7 @@ namespace RawHolyDamage
     {
 
         public const string GUID = "com.ehaugw.rawholydamage";
-        public const string VERSION = "1.0.0";
+        public const string VERSION = "2.0.0";
         public const string NAME = "Raw Holy Damage";
         
         public static Tag rawDamageBonusTag;
