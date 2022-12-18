@@ -9,9 +9,9 @@ assemble:
 	# common for all mods
 	rm -f -r public
 	mkdir -p public/$(pluginpath)/$(modname)
-	cp bin/$(modname).dll public/$(pluginpath)/$(modname)/
+	cp -u bin/$(modname).dll public/$(pluginpath)/$(modname)/
 	for dependency in $(dependencies) ; do \
-		cp ../$${dependency}/bin/$${dependency}.dll public/$(pluginpath)/$(modname)/ ; \
+		cp -u ../$${dependency}/bin/$${dependency}.dll public/$(pluginpath)/$(modname)/ ; \
 	done
 	
 publish:
@@ -22,7 +22,7 @@ publish:
 install:
 	make assemble
 	rm -r -f $(gamepath)/$(pluginpath)/$(modname)
-	# cp -r public/* $(gamepath)
+	# cp -u -r public/* $(gamepath)
 clean:
 	rm -f -r public
 	rm -f $(modname).rar
